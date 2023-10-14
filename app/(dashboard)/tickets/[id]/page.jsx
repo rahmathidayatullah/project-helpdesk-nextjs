@@ -5,7 +5,8 @@ export const dynamicParams = true // default val = true
 export async function generateMetadata({ params }) {
     const id = params.id
 
-    const res = await fetch(`http://localhost:4000/tickets/${id}`)
+    // const res = await fetch(`http://localhost:4000/tickets/${id}`)
+    const res = await fetch(`http://localhost:3000/api/tickets/${id}`)
     const ticket = await res.json()
 
     return {
@@ -14,7 +15,8 @@ export async function generateMetadata({ params }) {
 }
 
 export async function generateStaticParams() {
-    const tickets = await fetch('http://localhost:4000/tickets').then((res) => res.json())
+    // const tickets = await fetch('http://localhost:4000/tickets').then((res) => res.json())
+    const tickets = await fetch('http://localhost:3000/api/tickets').then((res) => res.json())
 
     return tickets.map((ticket) => ({
         id: ticket.id,
@@ -25,7 +27,8 @@ async function getTicket(id) {
     // imitate delay
     // await new Promise(resolve => setTimeout(resolve, 3000))
 
-    const res = await fetch(`http://localhost:4000/tickets/${id}`, {
+    // const res = await fetch(`http://localhost:4000/tickets/${id}`, {
+    const res = await fetch(`http://localhost:3000/api/tickets/${id}`, {
         next: {
             revalidate: 60
         }
