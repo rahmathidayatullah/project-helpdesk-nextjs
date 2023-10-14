@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Loading from "../loading"
 
 async function getTickets() {
   const res = await fetch('http://localhost:4000/tickets', {

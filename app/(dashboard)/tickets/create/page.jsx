@@ -1,5 +1,12 @@
 import CreateForm from './CreateForm'
 
+export async function generateMetadata() {
+
+    return {
+        title: `Dojo Helpdesk | Form`
+    }
+}
+
 export default async function CreateTicket() {
     return (
         <main>
