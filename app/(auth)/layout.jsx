@@ -10,6 +10,7 @@ export default async function AuthLayout({ children }) {
     if (data.session) {
         redirect('/')
     }
+
     return (
         <>
             <nav>

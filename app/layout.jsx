@@ -1,10 +1,7 @@
 import './globals.css'
 import { Rubik } from 'next/font/google'
 
-// components
-import Navbar from './components/Navbar'
-
-const rubik = Rubik({ subsets: ['latin'] })
+const rubik = Rubik({ subsets: ['latin'], preload: true })
 
 export const metadata = {
   title: 'Dojo Helpdesk',
